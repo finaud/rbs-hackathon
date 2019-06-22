@@ -24,8 +24,9 @@
                                                  src={{ url_for('static', filename='images/logo-white.png') }} alt="logo"/></a>
 {#                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>#}
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li id="nav-index"><a id="index-link" class="active" href="">Index</a></li>
-                    <li id="nav-contact"><a id="contact-link" href="">Contact</a></li>
+                    <li id="nav-index"><a id="index-link" class="active" href="{{ url_for('index') }}">Home</a></li>
+                    <li id="nav-contact"><a id="contact-link" href="{{ url_for('login') }}">Login</a></li>
+                    <li id="nav-contact"><a id="contact-link" href="{{ url_for('register') }}">Register</a></li>
                 </ul>
             </div>
         </nav>
