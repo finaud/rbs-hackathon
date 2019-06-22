@@ -1,2 +1,6 @@
 venv/
 .idea/
+
+config.py
+firebase-admin-sdk.json
+__pycache__/
