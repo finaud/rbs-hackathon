@@ -27,12 +27,9 @@ def register():
             session['token'] = user['idToken']
             session['user_id'] = user['localId']
 
-            flash("Account created", "message")
-
-            return redirect(url_for('bucket'))
+            return redirect(url_for('promises'))
 
         except HTTPError:
-            flash("Try again (email already in use, or use a stronger password)", "error")
             return render_template('auth/register.html')
 
     return render_template('auth/register.html')
@@ -47,12 +44,9 @@ def login():
             session['token'] = user['idToken']
             session['user_id'] = user['localId']
 
-            flash("Login successful", "message")
-
-            return redirect(url_for('bucket'))
+            return redirect(url_for('promises'))
 
         except HTTPError:
-            flash("Try again (invalid email or password)", "error")
             return render_template('auth/login.html')
 
     return render_template('auth/login.html')
@@ -61,7 +55,6 @@ def login():
 @app.route('/logout', methods=['GET'])
 def logout():
     session.clear()
-    flash("You have been logged out", "message")
     return render_template('index.html')
 
 
@@ -70,10 +63,10 @@ def promises():
     if 'token' not in session:
         return redirect(url_for('login'))
     items = firebase.database().child(session['user_id']).get()
-    promises = []
+    promises_list = []
     if items.val():
         for item in items.each():
-            promises.append({'item_id': item.key(), 'goal': item.val()['goal']})
+            promises_list.append({'item_id': item.key(), 'goal': item.val()['goal']})
 
     return render_template('promises/main.html', promises=promises)
 
