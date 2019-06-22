@@ -37,14 +37,17 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+
     if request.method == 'POST':
         try:
             email, password = request.form['email'], request.form['password']
             user = firebase.auth().sign_in_with_email_and_password(email, password)
+            print(user)
             session['token'] = user['idToken']
             session['user_id'] = user['localId']
-
-            return redirect(url_for('promises'))
+            session['user_email'] = user['email']
+            session['logged_in'] = True
+            return render_template('index.html')
 
         except HTTPError:
             return render_template('auth/login.html')
