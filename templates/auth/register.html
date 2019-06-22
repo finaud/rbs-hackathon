@@ -1,4 +1,25 @@
 {% extends "layout.html" %}
-{% block body %}
-
+{% block content %}
+    <h3 style="color: #000090">Register</h3>
+    {% if 'token' in session %}
+        <h4>you've already logged in!</h4>
+    {% else %}
+        <div class="card-panel">
+            <form id="user_form" action="{{ url_for('register') }}" method=post enctype="multipart/form-data">
+                <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" name="email" id="id_email" value="" size="50"/>
+                    <label for="id_email">Email</label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">vpn_key</i>
+                    <input type="password" name="password" id="id_password" value="" size="50"/>
+                    <label for="id_password">Password</label>
+                </div>
+                <div style="text-align: center">
+                    <button class="btn-large waves-effect">Register</button>
+                </div>
+            </form>
+        </div>
+    {% endif %}
 {% endblock %}

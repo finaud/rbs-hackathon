@@ -3,7 +3,9 @@
     height: 50%;
     margin-top: 14px;
 }
-
+.delete-bottom-margin{
+  margin-bottom: 0px;
+}
 .nav{
-    background-color: rgba(0, 10, 150, 0.8);
+    background-color: rgb(0, 10, 162);
 }

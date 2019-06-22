@@ -5,6 +5,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="{{ url_for('static', filename='js/promise.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/materialize.js') }}"></script>
     <title>{% block title %}{% endblock %} - Promise</title>
     {% endblock %}
   </head>
@@ -18,8 +20,8 @@
 {#        </ul>#}
         <nav class="nav" role="navigation">
             <div class="nav-wrapper container">
-                <img class="logo brand-logo"
-                                                 src={{ url_for('static', filename='images/logo-white.png') }} alt="logo"/>
+                <a href=".."><img class="logo brand-logo"
+                                                 src={{ url_for('static', filename='images/logo-white.png') }} alt="logo"/></a>
 {#                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>#}
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li id="nav-index"><a id="index-link" class="active" href="">Index</a></li>
