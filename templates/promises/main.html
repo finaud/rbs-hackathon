@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <script> $(document).ready(function(){
-    $('.modal').modal();
-  });</script>
+    <script> $(document).ready(function () {
+        $('.modal').modal();
+    });</script>
     <h3>Current Promises</h3>
 
     {% if len==0 %}
@@ -42,16 +42,22 @@
             <h5>Make your promise</h5>
             <form id="promise_form" action="{{ url_for('create_promise') }}" method=post enctype="multipart/form-data">
                 <div class="input-field ">
-                    <i class="material-icons prefix">account_circle</i>
+                    <i class="material-icons prefix">bookmark</i>
+                    <input type="text" name="title" id="id_title" value=""
+                           size="50"/>
+                    <label for="id_title">Your title</label>
+                </div>
+                <div class="input-field ">
+                    <i class="material-icons prefix">mode_comment</i>
                     <input type="text" name="promise" id="id_promise" value=""
-                              size="100"/>
+                           size="100"/>
                     <label for="id_promise">Your promise</label>
                 </div>
                 <button class="btn waves-effect waves-light">Submit</button>
             </form>
         </div>
-     <div class="modal-footer" id="modal_footer">
-            a
+        <div class="modal-footer" id="modal_footer">
+            .0
         </div>
     </div>
 
