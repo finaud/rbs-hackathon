@@ -18,7 +18,7 @@
                             <p>{{ promise['promise'] }}</p>
                         </div>
                         <div class="card-action" style="padding-bottom: 1px">
-                            <div class="row">
+                            <div class="row barwrapper">
                                 <div class="progress col m10 bar">
                                     <div class="determinate" style="width: {{ promise['percent'] }}%"></div>
                                 </div>
@@ -34,7 +34,7 @@
                 </div>
             </div>
         {% endfor %}
-    {% endif %}
+    {% endif %}</div>
     <div class="my-fixed-action-btn">
         <a class="btn blue darken-3 waves-effect waves-light modal-trigger" href="#modal1">
             <i class="large material-icons">add</i>Make a promise
@@ -61,8 +61,7 @@
             </form>
         </div>
         <div class="modal-footer" id="modal_footer">
-            .0
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">close</a>
         </div>
     </div>
-
 {% endblock %}
