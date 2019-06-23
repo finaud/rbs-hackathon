@@ -47,7 +47,7 @@ def login():
             session['user_id'] = user['localId']
             session['user_email'] = user['email']
             session['logged_in'] = True
-            return render_template('index.html')
+            return redirect(url_for('promises'))
 
         except HTTPError:
             return render_template('auth/login.html')
