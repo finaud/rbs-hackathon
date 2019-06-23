@@ -69,7 +69,9 @@ def promises():
     promises_list = []
     if items.val():
         for item in items.each():
-            promises_list.append({'item_id': item.key(), 'promise': item.val()['promise']})
+            promises_list.append({'item_id': item.key(), 'promise': item.val()['promise'],
+                                  'percent': item.val()['percent'],
+                                  'title': item.val()['title']})
     len = promises_list.__len__()
     return render_template('promises/main.html', promises=promises_list, len=len)
 
@@ -80,7 +82,7 @@ def create_promise():
         return redirect(url_for('login'))
     elif request.method == 'POST':
         promise = request.form['promise']
-        data = {'promise': promise}
+        data = {'promise': promise, 'percent': 0, 'title': 'Reduce entertainment spending by 15£'}
         firebase.database().child(session['user_id']).push(data)
         return redirect(url_for('promises'))
 

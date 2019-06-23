@@ -14,13 +14,13 @@
                 <div class="col s12 m9">
                     <div class="card hoverable">
                         <div class="card-content">
-                            <span class="card-title"> Simple Title</span>
+                            <span class="card-title"> {{ promise['title'] }}</span>
                             <p>{{ promise['promise'] }}</p>
                         </div>
                         <div class="card-action" style="padding-bottom: 1px">
                             <div class="row">
                                 <div class="progress col m10 bar">
-                                    <div class="determinate" style="width: 70%"></div>
+                                    <div class="determinate" style="width: {{ promise['percent'] }}%"></div>
                                 </div>
                                 <div class="col m2" style="text-align: center"><i class="material-icons large-icon">access_time</i>
                                 </div>
