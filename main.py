@@ -70,8 +70,8 @@ def promises():
     if items.val():
         for item in items.each():
             promises_list.append({'item_id': item.key(), 'goal': item.val()['goal']})
-
-    return render_template('promises/main.html', promises=promises)
+    len = promises_list.__len__()
+    return render_template('promises/main.html', promises=promises_list, len=len)
 
 
 @app.route('/create_promise', methods=['GET', 'POST'])

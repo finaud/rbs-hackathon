@@ -6,6 +6,22 @@
 .delete-bottom-margin{
   margin-bottom: 0px;
 }
+button, .btn-large{
+    background-color: rgb(0, 10, 178) !important;
+}
+
+.large-icon{
+    font-size: 300%;
+    text-align: center;
+}
+
+.bar{
+
+    margin-top: 12px;
+    height: 18px;
+
+}
+
 .nav{
     background-color: rgb(0, 10, 162);
 }
