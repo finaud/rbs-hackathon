@@ -52,19 +52,19 @@
 
     <div id="modal1" class="modal">
         <div class="modal-content">
-            <h5>Make your promise</h5>
+            <h5>Make Your Promise</h5>
             <form id="promise_form" action="{{ url_for('create_promise') }}" method=post enctype="multipart/form-data">
                 <div class="input-field ">
                     <i class="material-icons prefix">bookmark</i>
                     <input type="text" name="title" id="id_title" value=""
                            size="50"/>
-                    <label for="id_title">Your title</label>
+                    <label for="id_title">Promise</label>
                 </div>
                 <div class="input-field ">
                     <i class="material-icons prefix">mode_comment</i>
                     <input type="text" name="promise" id="id_promise" value=""
                            size="100"/>
-                    <label for="id_promise">Your promise</label>
+                    <label for="id_promise">Result</label>
                 </div>
                 <button class="btn waves-effect waves-light">Submit</button>
             </form>
