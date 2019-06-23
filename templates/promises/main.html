@@ -1,33 +1,42 @@
 {% extends "layout.html" %}
-
+{% block title %}Promises{% endblock %}
 {% block content %}
     <script> $(document).ready(function () {
         $('.modal').modal();
     });</script>
-    <h3>Current Promises</h3>
+    <div class="row">
+        <div class="col m10">
+            <div class="row" style="margin-bottom: 0px">
+                <div class="col m7" style="font-size: 3rem;">Current Promises</div>
+                <div class="col  blue-grey-text" style="margin-top: 35px;font-weight: 500">credit score: 2353</div>
+            </div>
+        </div>
+    </div>
 
     {% if len==0 %}
         There is no promise currently! Please add your promises by the button above.
     {% else %}
         {% for promise in promises %}
             <div class="row">
-                <div class="col s12 m9">
-                    <div class="card hoverable">
-                        <div class="card-content">
-                            <span class="card-title"> {{ promise['title'] }}</span>
-                            <p>{{ promise['promise'] }}</p>
-                        </div>
-                        <div class="card-action" style="padding-bottom: 1px">
-                            <div class="row barwrapper">
-                                <div class="progress col m10 bar">
-                                    <div class="determinate" style="width: {{ promise['percent'] }}%"></div>
-                                </div>
-                                {% if promise['percent'] != 100 %}
-                                    <div class="col m2" style="text-align: center"><i class="material-icons large-icon">access_time</i>
-                                {% else %}
-                                    <div class="col m2" style="text-align: center"><i class="material-icons large-icon green-text">check</i>
-                                {% endif %}
-                                </div>
+            <div class="col s12 m9">
+                <div class="card hoverable">
+                    <div class="card-content">
+                        <span class="card-title"> {{ promise['title'] }}</span>
+                        <p>{{ promise['promise'] }}</p>
+                    </div>
+                    <div class="card-action" style="padding-bottom: 1px">
+                        <div class="row barwrapper">
+                            <div class="progress col m10 bar">
+                                <div class="determinate" style="width: {{ promise['percent'] }}%"></div>
+                            </div>
+                            {% if promise['percent'] != 100 %}
+                                <div class="col m2" style="text-align: center">
+                                <i class="material-icons large-icon indigo-text">access_time</i>
+                            {% else %}
+                                <div class="col m2" style="text-align: center">
+                                <i class="material-icons large-icon green-text">check</i>
+                            {% endif %}
+                            </div>
                             </div>
                         </div>
                     </div>

@@ -27,7 +27,7 @@ button, .btn-large{
 .my-fixed-action-btn {
     position: fixed;
     right: 17%;
-    top: 90px;
+    top: 55px;
     padding-top: 15px;
     margin-bottom: 0;
     z-index: 997;

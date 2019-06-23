@@ -1,9 +1,11 @@
 {% extends "layout.html" %}
+{% block title %}Index{% endblock %}
 {% block content %}
     <div class="section no-pad-bot" id="index-banner">
         <div class="container">
             <br><br>
-            <h1 class="header center blue-grey-text" style="font-size: 7em">Promise</h1>
+{#            <h1 class="header center blue-grey-text" style="font-size: 7em">Promise</h1>#}
+            <div class="center center-align"><img style="height: 105px" src="{{ url_for('static', filename='images/logo-darkblue.png') }}"></div>
             <div class="row center">
                 <h5 class="header col s12 light">Your little helper to build your credit score.</h5>
             </div>
@@ -29,7 +31,7 @@
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h2 class="center light-blue-text"><i class="material-icons">timeline</i></h2>
             <h5 class="center">Promises</h5>
 
             <p class="light">Register your bank account, check out the recommended promises and start setting your goals.</p>
@@ -38,7 +40,7 @@
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h2 class="center light-blue-text"><i class="material-icons">credit_card</i></h2>
             <h5 class="center">Credit Score</h5>
 
             <p class="light">Keep track of your success and reassess your credit score.</p>
