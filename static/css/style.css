@@ -6,6 +6,16 @@
 .delete-bottom-margin{
   margin-bottom: 0px;
 }
+.img-adjustment{
+    height: 285px;
+    overflow: hidden;
+}
+.register-img-adjustment{
+    top: -50px !important;
+}
+.nav{
+    background-color: rgb(0, 10, 162);
+}
 button, .btn-large{
     background-color: rgb(0, 10, 178) !important;
 }
@@ -20,8 +30,4 @@ button, .btn-large{
     margin-top: 12px;
     height: 18px;
 
-}
-
-.nav{
-    background-color: rgb(0, 10, 162);
 }
