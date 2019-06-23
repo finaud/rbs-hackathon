@@ -73,7 +73,7 @@ def promises():
                                   'percent': item.val()['percent'],
                                   'title': item.val()['title']})
     len = promises_list.__len__()
-    return render_template('promises/main.html', promises=promises_list, len=len)
+    return render_template('promises/main.html', promises=reversed(promises_list), len=len)
 
 
 @app.route('/create_promise', methods=['GET', 'POST'])
@@ -82,7 +82,8 @@ def create_promise():
         return redirect(url_for('login'))
     elif request.method == 'POST':
         promise = request.form['promise']
-        data = {'promise': promise, 'percent': 0, 'title': 'Reduce entertainment spending by 15£'}
+        title = request.form['title']
+        data = {'promise': promise, 'percent': 0, 'title': title}
         firebase.database().child(session['user_id']).push(data)
         return redirect(url_for('promises'))
 
