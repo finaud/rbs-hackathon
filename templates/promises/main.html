@@ -22,7 +22,11 @@
                                 <div class="progress col m10 bar">
                                     <div class="determinate" style="width: {{ promise['percent'] }}%"></div>
                                 </div>
-                                <div class="col m2" style="text-align: center"><i class="material-icons large-icon">access_time</i>
+                                {% if promise['percent'] != 100 %}
+                                    <div class="col m2" style="text-align: center"><i class="material-icons large-icon">access_time</i>
+                                {% else %}
+                                    <div class="col m2" style="text-align: center"><i class="material-icons large-icon green-text">check</i>
+                                {% endif %}
                                 </div>
                             </div>
                         </div>
