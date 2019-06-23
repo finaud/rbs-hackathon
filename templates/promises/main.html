@@ -1,8 +1,13 @@
 {% extends "layout.html" %}
 {% block content %}
     <h3>Current Promise</h3>
+    <div class="my-fixed-action-btn">
+  <a class="btn red waves-effect waves-light">
+    <i class="large material-icons">add</i>
+  </a>
+</div>
     {% if len==0 %}
-        Empty
+        There is no promise currently! Please add your promises by the button above.
     {% else %}
         {% for promise in promises %}
             <div class="row">

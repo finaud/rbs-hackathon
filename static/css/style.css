@@ -24,7 +24,14 @@ button, .btn-large{
     font-size: 300%;
     text-align: center;
 }
-
+.my-fixed-action-btn {
+    position: fixed;
+    right: 420px;
+    top: 90px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 997;
+}
 .bar{
 
     margin-top: 12px;
