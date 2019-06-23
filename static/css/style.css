@@ -26,11 +26,12 @@ button, .btn-large{
 }
 .my-fixed-action-btn {
     position: fixed;
-    right: 420px;
+    right: 17%;
     top: 90px;
     padding-top: 15px;
     margin-bottom: 0;
     z-index: 997;
+    zoom: 1.21
 }
 .bar{
 

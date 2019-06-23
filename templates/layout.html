@@ -1,48 +1,53 @@
-
-  <head>
+<head>
     {% block head %}
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
         <script src="{{ url_for('static', filename='js/promise.js') }}"></script>
+        <script
+                src="https://code.jquery.com/jquery-3.4.1.js"
+                integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+                crossorigin="anonymous"></script>
         <script src="{{ url_for('static', filename='js/materialize.js') }}"></script>
-    <title>{% block title %}{% endblock %} - Promise</title>
+        <title>{% block title %}{% endblock %} - Promise</title>
     {% endblock %}
-  </head>
-  <body>
-  <div class="navbar-fixed">
-{#        <ul id="dropdown1" class="dropdown-content dropdown">#}
-{#            <li><a href="{% url "my-account" %}">My Account</a></li>#}
-{#            <li><a href="{% url "order-history" %}">My Orders</a></li>#}
-{#            <li class="divider"></li>#}
-{#            <li><a href="{% url "logout" %}">Logout</a></li>#}
-{#        </ul>#}
-        <nav class="nav" role="navigation">
-            <div class="nav-wrapper container">
-                <a href=".."><img class="logo brand-logo"
-                                                 src={{ url_for('static', filename='images/logo-white.png') }} alt="logo"/></a>
-{#                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>#}
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li id="nav-index"><a id="index-link" class="active" href="{{ url_for('index') }}">Home</a></li>
+</head>
+<body>
+<div class="navbar-fixed">
+    {#        <ul id="dropdown1" class="dropdown-content dropdown">#}
+    {#            <li><a href="{% url "my-account" %}">My Account</a></li>#}
+    {#            <li><a href="{% url "order-history" %}">My Orders</a></li>#}
+    {#            <li class="divider"></li>#}
+    {#            <li><a href="{% url "logout" %}">Logout</a></li>#}
+    {#        </ul>#}
+    <nav class="nav" role="navigation">
+        <div class="nav-wrapper container">
+            <a href=".."><img class="logo brand-logo"
+                              src={{ url_for('static', filename='images/logo-white.png') }} alt="logo"/></a>
+            {#                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>#}
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li id="nav-index"><a id="index-link" class="active" href="{{ url_for('index') }}">Home</a></li>
 
 
-                    {% if session['logged_in'] %}
+                {% if session['logged_in'] %}
                     <li id="nav-contact"><a id="contact-link" href="{{ url_for('logout') }}">Logout</a></li>
-                        <h7> Welcome, {{ session['user_email'] }} </h7>
-                    {% else %}
+                    <h7> Welcome, {{ session['user_email'] }} </h7>
+                {% else %}
                     <li id="nav-contact"><a id="contact-link" href="{{ url_for('register') }}">Register</a></li>
                     <li id="nav-contact"><a id="contact-link" href="{{ url_for('login') }}">Login</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <div id="content"><div class="container">{% block content %}{% endblock %}</div></div>
-    <div id="footer">
-      {% block footer %}
-      &copy; Copyright 2010 by <a href="http://domain.invalid/">you</a>.
-      {% endblock %}
-    </div>
-  </body>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</div>
+<div id="content">
+    <div class="container">{% block content %}{% endblock %}</div>
+</div>
+<div id="footer">
+    {% block footer %}
+        &copy; Copyright 2010 by <a href="http://domain.invalid/">you</a>.
+    {% endblock %}
+</div>
+</body>
 </html>
